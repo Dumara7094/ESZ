@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SSZ AdminStaff</title>
+<style>
+:root{--bg:#f2f6f3;--cd:#fff;--tx:#12201a;--mu:#5b6b63;--ac:#0b7a4b;--ac2:#fff;--bd:#dde5e0;--ok:#0b7a4b;--lt:#b45309;--ab:#b42318;--lv:#1d4ed8;box-sizing:border-box}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1411;--cd:#161f1b;--tx:#edf3ef;--mu:#9bb0a5;--ac:#34d399;--ac2:#04231a;--bd:#26332d;--ok:#34d399;--lt:#fbbf24;--ab:#f87171;--lv:#93b4ff}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px system-ui,-apple-system,"Noto Sans Ethiopic",sans-serif}.hide{display:none!important}
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 18px;color:white;background:linear-gradient(165deg,#0a3a8a,#0b7a4b 65%,#b99b16)}
+.logo{width:112px;height:112px;border:3px solid #fff9;border-radius:28px;display:grid;place-items:center;font-size:54px;background:#ffffff22;box-shadow:0 10px 30px #0005}.cover h1{margin:14px 0 2px;font-size:25px}.sub{opacity:.92}.zn{margin:10px 0;font-size:13px;line-height:1.6}.ck{margin:14px;padding:12px 20px;border-radius:16px;background:#ffffff26;min-width:240px}.ck b{font-size:30px;display:block}.cb{width:100%;max-width:340px;padding:15px;margin:6px;border-radius:14px;border:0;font-size:16px;font-weight:700;background:#fff;color:#0a3a8a}.cb.g{background:#ffffff2e;color:#fff;border:1px solid #fff9}.ft{font-size:12px;opacity:.8;margin-top:14px}
+.wrap{max-width:900px;margin:auto;padding:14px}.top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.top h1{font-size:18px;margin:0}.top .t{text-align:right;color:var(--mu);font-size:13px}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px}.tabs button{flex:1;white-space:nowrap;padding:10px;border-radius:12px;border:1px solid var(--bd);background:var(--cd);color:var(--tx)}.tabs button.on{background:var(--ac);color:var(--ac2);border-color:var(--ac);font-weight:700}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}.scan{width:100%;display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--ac);color:var(--ac2);border:0;border-radius:20px;padding:25px 12px;font-size:19px;font-weight:700}.scan span{font-size:54px}
+.fp-card{margin-top:12px;text-align:center;border:2px solid #0b7a4b;background:linear-gradient(180deg,rgba(11,122,75,.10),var(--cd))}.face-video{width:100%;max-width:440px;border-radius:14px;background:#111;transform:scaleX(-1)}.face-modal{position:fixed;inset:0;background:#000b;z-index:9999;display:flex;align-items:center;justify-content:center;padding:14px}.face-panel{width:100%;max-width:520px;max-height:95vh;overflow:auto;background:var(--cd);color:var(--tx);border-radius:18px;padding:16px}.face-panel h2{font-size:18px;margin:0 0 8px}.face-status{font-size:13px;color:var(--mu);margin:8px 0;line-height:1.5}.fp-mark{width:92px;height:92px;margin:4px auto 10px;display:grid;place-items:center;border-radius:24px;background:rgba(139,92,246,.14);color:#8b5cf6}.fp-mark svg{width:62px;height:62px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.fp-title{font-size:18px;font-weight:800;color:var(--tx)}.fp-sub{font-size:13px;color:var(--mu);line-height:1.6;margin:4px 0 12px}.scan{background:#6d28d9;color:white;padding:15px 12px;border-radius:13px;font-size:16px}.scan span{font-size:22px}.mu{color:var(--mu);font-size:13px}
+.res{margin-top:12px;border-radius:16px;padding:16px;text-align:center;border:2px solid var(--bd)}.res h2{margin:0 0 6px;font-size:20px}.res.ok{border-color:var(--ok)}.res.lt{border-color:var(--lt)}.res.ab{border-color:var(--ab)}
+input,select,textarea{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font-size:15px;margin:5px 0 8px;font-family:inherit}label{font-size:13px;color:var(--mu)}.btn{padding:11px 14px;border-radius:10px;border:0;background:var(--ac);color:var(--ac2);font-size:15px;font-weight:700}.btn.s{background:var(--cd);color:var(--tx);border:1px solid var(--bd);font-weight:500;padding:8px 10px;font-size:13px}.btn.r{background:var(--ab);color:#fff}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.chip{padding:6px 10px;border-radius:99px;font-size:13px;border:1px solid var(--bd);background:var(--cd)}.bd{display:inline-block;padding:2px 9px;border-radius:99px;font-size:12px;font-weight:700;border:1px solid currentColor;white-space:nowrap}.b-ok{color:var(--ok)}.b-late,.b-pending{color:var(--lt)}.b-absent,.b-rejected{color:var(--ab)}.b-leave{color:var(--lv)}.b-wait{color:var(--mu)}.b-approved{color:var(--ok)}.ov{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:8px 6px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}th{color:var(--mu);font-weight:500;font-size:12px}
+</style></head><body>
+<div id="v-cover" class="cover"><div class="logo">🏢</div><h1>SSZ AdminStaff</h1><div class="sub">Digital Attendance &amp; Payroll</div><div class="zn">Soojjaati Sidaami Zoone Gashootu Borro Mine<br>ምስራቃዊ ሲዳማ ዞን አስተዳደር ጽ/ቤት</div><div class="ck"><b class="clk">--:--</b><span class="dt"></span></div><button class="cb" data-go="staff">👆 ሠራተኛ — መግቢያና መውጫ</button><button class="cb g" data-go="admin">💻 አስተዳዳሪ</button><div class="ft">የፊት መለያ ሙከራዊ ነው፤ የሠራተኛ ፈቃድ ያስፈልጋል።<br>Developed by Dumara Duwe © 2026</div><div class="ft" id="cloud"></div></div>
+<div id="v-staff" class="hide"><div class="wrap"><div class="top"><button class="btn s" data-go="cover">← ተመለስ</button><div class="t"><b class="clk"></b><br><span class="dt"></span></div></div><div class="tabs" id="st-tabs"><button class="on" data-t="s1">👆 መግቢያ/መውጫ</button><button data-t="s2">📝 ፈቃድ ጥያቄ</button></div>
+<div id="s1"><div class="card mu" style="text-align:center">መግቢያ 2:30–3:00 · መውጫ 11:00–11:30 (የኢትዮጵያ ሰዓት)<br>ለመመዝገብ በተመዘገበው የቢሮ ቦታ መገኘት ያስፈልጋል።</div><div class="card fp-card"><div class="fp-mark" aria-hidden="true">📷</div><div class="fp-title">FACE RECOGNITION</div><div class="fp-sub">የፊት መለያ ማረጋገጫ<br>በአስተዳዳሪው የተመዘገበ ፊትዎን ካሜራ ያውቃል፤ ከዚያ GPS ተረጋግጦ መግቢያ/መውጫ ይመዘገባል።</div><button class="scan" id="scan"><span>📸</span>Face Check-in / Check-out</button></div><div id="res"></div><div class="card" style="margin-top:12px"><b>የፊት ምዝገባ</b><div class="mu">የፊት ምዝገባ በአስተዳዳሪ ገጽ ብቻ ይከናወናል። ሠራተኛው በፊት ለፊት ቆሞ ፈቃዱን ከሰጠ በኋላ ይመዘገባል።</div></div></div>
+<div id="s2" class="hide"><div class="card"><label>ስም</label><select id="lv-n"></select><div class="two"><div><label>ከ</label><input type="date" id="lv-f"></div><div><label>እስከ</label><input type="date" id="lv-t"></div></div><label>የፈቃድ ዓይነት</label><select id="lv-k"><option>የዓመት ፈቃድ</option><option>የሕመም ፈቃድ</option><option>የድንገተኛ ፈቃድ</option><option>ሌላ</option></select><label>ምክንያት</label><textarea id="lv-r" rows="3"></textarea><button class="btn" id="lv-s" style="width:100%">ጥያቄ ላክ</button><div class="mu" id="lv-m"></div></div><div id="lv-list"></div></div></div></div>
+<div id="v-admin" class="hide"><div class="wrap"><div class="top"><button class="btn s" data-go="cover">← መነሻ</button><div class="t"><b class="clk"></b><br><span class="dt"></span></div></div><div id="a-login" class="card"><h1 style="font-size:18px">አስተዳዳሪ</h1><div class="mu" id="a-hint"></div><input type="password" id="a-pin" placeholder="PIN" inputmode="numeric"><button class="btn" id="a-go" style="width:100%">ግባ</button><div class="mu" id="a-m"></div></div><div id="a-app" class="hide"><div class="tabs" id="a-tabs"><button class="on" data-t="a1">📊 ዛሬ</button><button data-t="a2">📝 ፈቃድ</button><button data-t="a3">💰 ደመወዝ</button><button data-t="a4">👥 ሠራተኞች/GPS</button></div><div id="a1"></div><div id="a2" class="hide"></div><div id="a3" class="hide"></div><div id="a4" class="hide"></div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const S=[
+["ተሰማ ቃባቶ","25/SSZ/13",0,"Gashootunna Latishu Hajubba Deskete Qineessaancho"],["ታከለ ጋርጄ","25/SSZ/20",0,"Amanyootunna Tsere Mussinu Deske Qineessanacho"],["ወጣቴ ወርቁ","25/SSZ/17",0,"Hasiisote Ikkito Borreesso Hajubba Qineessaancho"],["ወገኔ አክልሉ","25/SSZ/4",0,"Latishu Mixo Ogeessa IV"],["ብርሃኑ ጣሶው","25/SSZ/9",0,"Mannu Jiro Ogeessa IV"],["ፀዳለም ታፈሰ","25/SSZ/18",0,"Rosunna Qajeelshu Ogeessa IV"],["እንግዳ ሞኮንን","25/SSZ/19",0,"Taje Gamba Assatenna Haarate Ogeessa"],["በላይነህ ባካዬ","25/SSZ/",0,"—"],["አሰገደች አለማየሁ","25/SSZ/10",0,"Mannu Jiro Loosu Massago Director Directore"],["ቱሩፋት ለሜቼ","25/SSZ/11",0,"Mannu Jiro Massago Ogeessa III"],["እንዳለ እንድራስ","25/SSZ/2",0,"Ekisikutiwe Sekiteral I"],["አለሚቱ አብርሃም","25/SSZ/1",0,"Oofaancho"],["ዳንኤል ማቴዎስ","25/SSZ/27",0,"Oofaancho I"],["ታምሩ ታከለ","25/SSZ/8",0,"Agaraancho"],["ካንባታ ፌዶ","25/SSZ/7",0,"Agaraancho"],["አይናለም ተክሌ","25/SSZ/3",0,"Soqqamaancho"],["ሎሚ ካሣ","25/SSZ/5",0,"Biifisaancho"],["ብርሃነሽ ቶማስ","25/SSZ/6",0,"Biifisaancho"],["ተስፋዬ ብርሃኑ","25/SSZ/26",0,"Oofaancho"],["አበበ አባይነህ","25/SSZ/16",0,"Amaalaanote Hajubba Qineesso Ogeessa IV"],["ኤልያስ ካሣ","25/SSZ/23",0,"Mootimmate Kuminikishien Director Directore"],["አገኘሁ አሰፋ","25/SSZ/24",0,"Dagatenna Miidiyu Xaadooshi Ogeessa IV"],["ተሰማ ተክሌ","25/SSZ/22",0,"Dhaadote Amanyooti Rosi Rumuxisso Qajeelshu Ogeessa"]];
+const IN_END=540,OUT_START=1020,DAYS=22,HRS=8,DBURL="https://ssz-adminstaff-default-rtdb.firebaseio.com";
+const MN=["መስከረም","ጥቅምት","ኅዳር","ታኅሣሥ","ጥር","የካቲት","መጋቢት","ሚያዝያ","ግንቦት","ሰኔ","ሐምሌ","ነሐሴ","ጳጉሜን"],WD=["እሑድ","ሰኞ","ማክሰኞ","ረቡዕ","ሐሙስ","ዓርብ","ቅዳሜ"];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const ST={get(k,d){try{let v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const M={},C=()=>M.c||(M.c=ST.get("s2faces",{})),G=()=>M.g||(M.g=ST.get("s2g",[])),L=()=>M.l||(M.l=ST.get("s2l",[])),SAL=i=>+(M.s||(M.s=ST.get("s2s",[])))[i]||0;
+let OFF=ST.get("s2o",null),cloudOK=false,syncBusy=false;
+const p2=n=>String(n).padStart(2,"0"),fmt=new Intl.DateTimeFormat("en-GB",{timeZone:"Africa/Addis_Ababa",hourCycle:"h23",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"});
+function P(ms){let o={};fmt.formatToParts(ms).forEach(p=>{if(p.type!=="literal")o[p.type]=+p.value});return o}
+const key=o=>o.year+"-"+p2(o.month)+"-"+p2(o.day);
+function jdn(y,m,d){let a=Math.floor((14-m)/12),yy=y+4800-a,mm=m+12*a-3;return d+Math.floor((153*mm+2)/5)+365*yy+Math.floor(yy/4)-Math.floor(yy/100)+Math.floor(yy/400)-32045}
+function eth(y,m,d){let j=jdn(y,m,d)-1723856,r=((j%1461)+1461)%1461,n=r%365+365*Math.floor(r/1460);return{y:4*Math.floor(j/1461)+Math.floor(r/365)-Math.floor(r/1460),m:Math.floor(n/30)+1,d:n%30+1}}
+function et(m){let H=Math.floor(m/60),e=(H-6+24)%12||12;return e+":"+p2(m%60)+" "+(H<6?"ሌሊት":H<12?"ጧት":H<18?"ከሰዓት":"ማታ")}
+function ed(dk){let[y,m,d]=dk.split("-").map(Number),e=eth(y,m,d);return MN[e.m-1]+" "+e.d+"/"+e.y}
+const wk=o=>new Date(Date.UTC(o.year,o.month-1,o.day)).getDay(),money=x=>Math.round(x).toLocaleString("en-US");
+function tick(){let n=P(Date.now()),e=eth(n.year,n.month,n.day);document.querySelectorAll(".clk").forEach(x=>x.textContent=et(n.hour*60+n.minute));document.querySelectorAll(".dt").forEach(x=>x.textContent=WD[wk(n)]+"፣ "+MN[e.m-1]+" "+e.d+" ቀን "+e.y+" ዓ.ም")}
+setInterval(tick,1000);tick();
+function show(v){["cover","staff","admin"].forEach(x=>$("v-"+x).classList.toggle("hide",x!==v));scrollTo(0,0);if(v==="staff")lvRender();if(v==="admin"&&!$("a-app").classList.contains("hide"))arender()}
+document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>show(b.dataset.go));
+function tabs(id,ps,cb){let bs=$(id).querySelectorAll("button");bs.forEach(b=>b.onclick=()=>{bs.forEach(x=>x.classList.toggle("on",x===b));ps.forEach(p=>$(p).classList.toggle("hide",p!==b.dataset.t));cb&&cb()})}
+tabs("st-tabs",["s1","s2"],lvRender);tabs("a-tabs",["a1","a2","a3","a4"],arender);
+function res(c,h,t){$("res").innerHTML=`<div class="res ${c}"><h2>${h}</h2><div>${t}</div></div>`}
+async function near(){if(!OFF||!Number.isFinite(+OFF.lat)||!Number.isFinite(+OFF.lng))return (res("ab","የቢሮ GPS አልተዘጋጀም","አስተዳዳሪው በመጀመሪያ የቢሮውን GPS ቦታ ማስቀመጥ አለበት።"),false);
+ if(!navigator.geolocation)return (res("ab","GPS አይደገፍም","የስልኩን Location ያብሩ።"),false);
+ return new Promise(resolve=>navigator.geolocation.getCurrentPosition(p=>{let rad=x=>x*Math.PI/180,R=6371000,a=rad(p.coords.latitude-OFF.lat),b=rad(p.coords.longitude-OFF.lng),d=2*R*Math.asin(Math.sqrt(Math.sin(a/2)**2+Math.cos(rad(OFF.lat))*Math.cos(rad(p.coords.latitude))*Math.sin(b/2)**2));
+ if(p.coords.accuracy>100){res("ab","GPS ትክክለኛነት ዝቅተኛ ነው","Location አብርተው በትክክለኛ ሁኔታ እንደገና ይሞክሩ።");resolve(false)}
+ else if(d<=OFF.r){resolve(true)}else{res("ab","ከቢሮ ውጭ ነዎት","ከቢሮው "+Math.round(d)+" ሜትር ርቀዋል። በቢሮው ውስጥ ሲሆኑ ብቻ ይመዝገቡ።");resolve(false)}},
+ ()=>{res("ab","GPS ፈቃድ አልተሰጠም","በስልኩ Location እና የBrowser ፈቃድ ያብሩ።");resolve(false)},{enableHighAccuracy:true,timeout:20000,maximumAge:0}))}
+const FACE_MODEL_URL="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/model/";
+let faceModelsReady=false,faceStream=null;
+async function loadFaceModels(){if(faceModelsReady)return;if(!window.faceapi)throw Error("Face Recognition library አልተጫነም፤ Internet ያረጋግጡ።");await Promise.all([faceapi.nets.tinyFaceDetector.loadFromUri(FACE_MODEL_URL),faceapi.nets.faceLandmark68Net.loadFromUri(FACE_MODEL_URL),faceapi.nets.faceRecognitionNet.loadFromUri(FACE_MODEL_URL)]);faceModelsReady=true}
+function faceDistance(a,b){let s=0;for(let i=0;i<a.length;i++)s+=(a[i]-b[i])**2;return Math.sqrt(s)}
+function stopFaceCamera(){if(faceStream){faceStream.getTracks().forEach(t=>t.stop());faceStream=null}let v=$("face-video");if(v)v.srcObject=null;let m=$("face-modal");if(m)m.remove()}
+function faceMessage(t){let e=$("face-status");if(e)e.textContent=t}
+async function openFaceCamera(mode,rid){
+ if(!window.isSecureContext||!navigator.mediaDevices?.getUserMedia)throw Error("ካሜራ ለመጠቀም GitHub Pages HTTPS በChrome ይክፈቱ።");
+ await loadFaceModels();
+ const old=$("face-modal");if(old)old.remove();
+ const m=document.createElement("div");m.id="face-modal";m.className="face-modal";m.innerHTML=`<div class="face-panel"><h2>${mode==="enroll"?"የሠራተኛ ፊት ምዝገባ":"የፊት ማረጋገጫ"}</h2><div class="face-status" id="face-status">ካሜራ በመክፈት ላይ…</div><video id="face-video" class="face-video" autoplay muted playsinline></video><div class="two" style="margin-top:10px"><button class="btn" id="face-capture">${mode==="enroll"?"ፊት መዝግብ":"ፊቴን አረጋግጥ"}</button><button class="btn r" id="face-cancel">ዝጋ</button></div><div class="face-status">ብርሃን ባለው ቦታ ቀጥ ብለው ይቁሙ፤ ፊትዎ በካሜራው ውስጥ ሙሉ በሙሉ ይታይ።</div></div>`;
+ document.body.appendChild(m);$("face-cancel").onclick=stopFaceCamera;
+ faceStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:"user",width:{ideal:640},height:{ideal:480}},audio:false});
+ const v=$("face-video");v.srcObject=faceStream;await v.play();faceMessage("ካሜራ ዝግጁ ነው። ፊትዎን ወደ ካሜራው ያቅኑ።");
+ $("face-capture").onclick=async()=>{const b=$("face-capture");b.disabled=true;try{
+   faceMessage("ፊት በመመርመር ላይ…");let descriptors=[];
+   for(let j=0;j<(mode==="enroll"?3:1);j++){
+    const all=await faceapi.detectAllFaces(v,new faceapi.TinyFaceDetectorOptions({inputSize:320,scoreThreshold:.5})).withFaceLandmarks().withFaceDescriptors();
+    if(all.length!==1)throw Error(all.length===0?"ፊት አልታየም። በካሜራው ፊት ብቻዎን ይቁሙ።":"በካሜራው ውስጥ አንድ ሰው ብቻ ይታይ።");
+    descriptors.push(Array.from(all[0].descriptor));if(j<2)await new Promise(r=>setTimeout(r,450));
+   }
+   const avg=descriptors[0].map((_,i)=>descriptors.reduce((s,d)=>s+d[i],0)/descriptors.length);
+   stopFaceCamera();
+   if(mode==="enroll"){C()[rid]=avg;saveLocal();arender();res("ok","የፊት ምዝገባ ተሳክቷል",esc(S[rid][0])+" ተመዝግቧል። አሁን በሠራተኛ ገጽ ራሱን ማረጋገጥ ይችላል።");}
+   else {const matches=Object.entries(C()).map(([i,d])=>({i:+i,dist:faceDistance(avg,d)})).sort((a,b)=>a.dist-b.dist);
+    if(!matches.length)throw Error("ምንም የተመዘገበ ፊት የለም። አስተዳዳሪው መጀመሪያ ሠራተኞችን ያስመዝግብ።");
+    if(matches[0].dist>0.48||(matches[1]&&matches[1].dist-matches[0].dist<0.06))throw Error("ፊትዎ በቂ አልተዛመደም። እንደገና ይሞክሩ።");
+    const i=matches[0].i;if(!await near())return;mark(i);
+   }
+  }catch(e){faceMessage(e.message||"ስህተት ተፈጥሯል");b.disabled=false;}
+ };
+}
+function saveLocal(){ST.set("s2faces",C());ST.set("s2g",G());ST.set("s2l",L());ST.set("s2o",OFF);ST.set("s2s",M.s||ST.get("s2s",[]));}
+async function cloud(path,method="GET",data){let r=await fetch(DBURL+"/"+path+".json",{method,headers:{"Content-Type":"application/json"},body:data===undefined?undefined:JSON.stringify(data)});if(!r.ok)throw Error("Firebase HTTP "+r.status);return r.status===204?null:r.json()}
+function save(){saveLocal();syncCloud()}
+async function syncCloud(){if(syncBusy)return;syncBusy=true;try{let records={};G().forEach(r=>{records[r.rid+"_"+r.dk+"_"+r.k]=r});for(let [id,r] of Object.entries(records))await cloud("att/records/"+id,"PUT",r);
+ for(let l of L())await cloud("att/leave/"+l.id,"PUT",l);
+ if(OFF)await cloud("att/office","PUT",OFF);cloudStatus("☁️ Firebase ተገናኝቷል");}catch(e){cloudStatus("⚠️ Firebase አልተገናኘም — በዚህ መሣሪያ ላይ ተቀምጧል")}finally{syncBusy=false}}
+function cloudStatus(t){$("cloud").textContent=t}
+async function pullCloud(){try{let a=await cloud("att");if(!a){cloudStatus("☁️ Firebase ተገናኝቷል");return}let g=[...G()],l=[...L()],seen=new Set(g.map(x=>x.rid+"_"+x.dk+"_"+x.k)),lm=new Map(l.map(x=>[String(x.id),x]));
+ if(a.records)Object.values(a.records).forEach(x=>{if(x&&!seen.has(x.rid+"_"+x.dk+"_"+x.k)){g.push(x);seen.add(x.rid+"_"+x.dk+"_"+x.k)}});
+ if(a.leave)Object.values(a.leave).forEach(x=>{if(x)lm.set(String(x.id),x)});
+ if(a.office&&Number.isFinite(+a.office.lat)){OFF=a.office;ST.set("s2o",OFF)}
+ M.g=g;M.l=[...lm.values()];saveLocal();cloudStatus("☁️ Firebase ተገናኝቷል");arender();lvRender()}catch(e){cloudStatus("⚠️ Firebase ግንኙነት የለም (Local ብቻ)")}}
+function mark(rid){let n=P(Date.now()),dk=key(n),m=n.hour*60+n.minute,nm=S[rid][0],d=G().filter(r=>r.rid===rid&&r.dk===dk),i=d.find(r=>r.k==="in"),o=d.find(r=>r.k==="out");
+ if(o)return res("lt",nm,"ዛሬ መግቢያና መውጫዎ ተመዝግቧል።");
+ if(i&&m-i.m<10)return res("lt",nm,"መግቢያዎ በ"+et(i.m)+" ተመዝግቧል። እንደገና ለመመዝገብ ቢያንስ 10 ደቂቃ ይጠብቁ።");
+ let k=i?"out":"in";G().push({rid,k,dk,m,t:Date.now()});save();
+ if(k==="in")res(m<=IN_END?"ok":"lt",m<=IN_END?"እንኳን ደህና መጡ፣ "+esc(nm)+"!":"አርፍደዋል፣ "+esc(nm),(m>IN_END?(m-IN_END)+" ደቂቃ አርፍደዋል። ":"")+"መግቢያ፦ "+et(m));
+ else res(m>=OUT_START?"ok":"lt",m>=OUT_START?"መልካም ምሽት፣ "+esc(nm)+"!":"ቀደም ብለው ወጥተዋል፣ "+esc(nm),(m<OUT_START?(OUT_START-m)+" ደቂቃ ቀደም ብለው ወጥተዋል። ":"")+"መውጫ፦ "+et(m));
+}
+$("scan").onclick=async()=>{try{if(!Object.keys(C()).length)return res("ab","የፊት ምዝገባ የለም","አስተዳዳሪው በመጀመሪያ የሠራተኞችን ፊት ያስመዝግብ።");await openFaceCamera("verify")}catch(e){res("ab","የፊት ማረጋገጫ አልተሳካም",esc(e.message||e))}};
+const SL={pending:"በመጠባበቅ ላይ",approved:"ተፈቅዷል",rejected:"ውድቅ ተደርጓል"};
+function lcard(l,adm){let s=S[l.rid]||["ስም አልተገኘም"];return `<div class="card"><div style="display:flex;justify-content:space-between;gap:8px"><b>${esc(s[0])}</b><span class="bd b-${l.status}">${SL[l.status]||l.status}</span></div><div class="mu">${esc(l.type)} · ${ed(l.from)} – ${ed(l.to)}</div><div style="margin:6px 0">${esc(l.reason)}</div>${l.note?`<div class="mu">የአስተዳዳሪ ምክንያት፦ ${esc(l.note)}</div>`:""}${adm&&l.status==="pending"?`<textarea id="nt${l.id}" placeholder="ምክንያት (ውድቅ ሲያደርጉ የግድ)"></textarea><div class="two"><button class="btn" data-a="approved" data-id="${l.id}">✓ አጽድቅ</button><button class="btn r" data-a="rejected" data-id="${l.id}">✗ ውድቅ</button></div>`:""}</div>`}
+function lvRender(){if(!$("lv-f").value){let k=key(P(Date.now()));$("lv-f").value=k;$("lv-t").value=k}let r=+$("lv-n").value,a=L().filter(l=>l.rid===r).reverse();$("lv-list").innerHTML=a.map(l=>lcard(l,false)).join("")}
+$("lv-n").onchange=lvRender;$("lv-s").onclick=()=>{let f=$("lv-f").value,t=$("lv-t").value,r=$("lv-r").value.trim(),m=$("lv-m");if(!f||!t||t<f)return m.textContent="ቀኖቹን በትክክል ያስገቡ።";if(!r)return m.textContent="ምክንያት ያስገቡ።";L().push({id:Date.now(),rid:+$("lv-n").value,type:$("lv-k").value,from:f,to:t,reason:r,status:"pending",note:"",t:Date.now()});save();$("lv-r").value="";m.textContent="ጥያቄዎ ተልኳል ✓";lvRender()};
+$("a-hint").textContent=ST.get("s2p","")?"PIN ያስገቡ።":"የመጀመሪያ ጊዜ፦ ቢያንስ 4 ቁጥር PIN ይፍጠሩ።";
+$("a-go").onclick=()=>{let v=$("a-pin").value,p=ST.get("s2p","");if(!p){if(v.length<4)return $("a-m").textContent="ቢያንስ 4 ቁጥር ያስገቡ።";ST.set("s2p",v)}else if(v!==p)return $("a-m").textContent="PIN ትክክል አይደለም።";$("a-login").classList.add("hide");$("a-app").classList.remove("hide");$("a-pin").value="";arender()};
+const SN={ok:"በሰዓት",late:"አርፋጅ",absent:"ቀረ",leave:"ፈቃድ",wait:"ገና"};
+function info(rid,dk,n){let a=G().filter(r=>r.rid===rid&&r.dk===dk),i=a.find(r=>r.k==="in"),o=a.find(r=>r.k==="out"),sal=SAL(rid),st,late=0,early=0,ded=0;if(L().some(l=>l.rid===rid&&l.status==="approved"&&l.from<=dk&&dk<=l.to))st="leave";else if(i){late=Math.max(0,i.m-IN_END);st=late?"late":"ok";if(o)early=Math.max(0,OUT_START-o.m)}else if(dk<key(n)||n.hour*60+n.minute>=IN_END){st="absent";ded=sal/DAYS}else st="wait";ded+=(late+early)/60*sal/DAYS/HRS;return{st,i,o,late,early,ded}}
+function arender(){let n=P(Date.now()),dk=key(n),we=[0,6].includes(wk(n));
+ if(!$("a1").classList.contains("hide")){let rows=S.map((s,i)=>({s,i,f:info(i,dk,n)})),c={ok:0,late:0,absent:0,leave:0,wait:0};if(!we)rows.forEach(r=>c[r.f.st]++);$("a1").innerHTML=(we?'<div class="card mu">ዛሬ የዕረፍት ቀን ነው።</div>':"")+`<div class="chips">${Object.keys(SN).map(k=>`<span class="chip b-${k}"><b>${c[k]}</b> ${SN[k]}</span>`).join("")}</div><div class="card ov"><table><tr><th>ስም</th><th>ሁኔታ</th><th>ገባ</th><th>ወጣ</th></tr>${rows.map(r=>`<tr><td>${esc(r.s[0])}</td><td>${we?"—":`<span class="bd b-${r.f.st}">${SN[r.f.st]}</span>`}</td><td>${r.f.i?et(r.f.i.m):"—"}</td><td>${r.f.o?et(r.f.o.m):"—"}</td></tr>`).join("")}</table></div>`}
+ if(!$("a2").classList.contains("hide")){let a=L().slice().sort((x,y)=>(x.status==="pending"?0:1)-(y.status==="pending"?0:1)||y.t-x.t);$("a2").innerHTML=a.length?a.map(l=>lcard(l,true)).join(""):'<div class="card mu">ምንም የፈቃድ ጥያቄ የለም።</div>'}
+ if(!$("a3").classList.contains("hide")&&document.activeElement.id!=="sl-t"){let e=eth(n.year,n.month,n.day),R=S.map((s,i)=>({s,i,ab:0,mn:0,d:0}));for(let d=1;d<=n.day;d++){let dt=new Date(Date.UTC(n.year,n.month-1,d)),w=dt.getUTCDay();if(w===0||w===6)continue;let k=dt.getUTCFullYear()+"-"+p2(dt.getUTCMonth()+1)+"-"+p2(dt.getUTCDate());R.forEach(r=>{let f=info(r.i,k,n);if(f.st==="absent")r.ab++;r.mn+=f.late+f.early;r.d+=f.ded})}let tot=R.reduce((a,r)=>a+r.d,0);$("a3").innerHTML=`<div class="card"><b>🔒 ደመወዝ ማስገቢያ</b><div class="mu">ደመወዝ በዚህ መሣሪያ ላይ ብቻ ይቀመጣል። 23 ቁጥሮችን በነጠላ ሰረዝ ይለዩ።</div><textarea id="sl-t" rows="2"></textarea><button class="btn s" id="sl-s">አስቀምጥ</button><div class="mu" id="sl-m"></div></div><div class="card"><b>${MN[e.m-1]} ${e.y} ዓ.ም</b><div class="mu">ጠቅላላ ተቀናሽ፦ <b>${money(tot)}</b> ብር</div></div><div class="card ov"><table><tr><th>ስም</th><th>ደመወዝ</th><th>የቀረ ቀን</th><th>ደቂቃ</th><th>ተቀናሽ</th><th>የተጣራ</th></tr>${R.map(r=>`<tr><td>${esc(r.s[0])}</td><td>${money(SAL(r.i))}</td><td>${r.ab}</td><td>${r.mn}</td><td>${money(r.d)}</td><td><b>${money(SAL(r.i)-r.d)}</b></td></tr>`).join("")}</table></div>`}
+ if(!$("a4").classList.contains("hide")&&document.activeElement.id!=="bk-t"){$("a4").innerHTML=`<div class="card"><b>📍 የቢሮ GPS ቦታ</b><div class="mu">${OFF?"የቢሮ ቦታ ተቀምጧል። ክልል፦ "+OFF.r+" ሜትር":"የቢሮ ቦታ አልተቀመጠም። ከዚህ ታብሌት/ስልክ በቢሮው ውስጥ ሆነው ያስቀምጡ።"}</div><button class="btn" id="of-s">📍 የአሁኑን ቦታ እንደ ቢሮ አስቀምጥ (150 ሜትር)</button><div class="mu" id="of-m"></div></div><div class="card"><b>💾 ባክአፕ</b><div class="two"><button class="btn s" id="bk-c">ቅዳ</button><button class="btn s" id="bk-r">መልስ</button></div><textarea id="bk-t" rows="2" placeholder="ቅጂውን እዚህ ይለጥፉ"></textarea><div class="mu" id="a4m"></div></div><div class="card ov"><b>የሠራተኞች የፊት መለያ ምዝገባ</b><div class="mu">ሠራተኛው በአካል ተገኝቶ ፈቃዱን ከሰጠ በኋላ ይመዝግቡ። የፊት መለያ መረጃው በዚህ ታብሌት ላይ ብቻ ይቀመጣል።</div><table>${S.map((s,i)=>`<tr><td>${i+1}. ${esc(s[0])}<br><span class=mu>${esc(s[1])} · ${esc(s[3])}</span></td><td>${C()[i]?`<button class="btn s" data-face-rm="${i}">✓ ተመዝግቧል · አስወግድ</button>`:`<button class="btn s" data-face-reg="${i}">📷 ፊት አስመዝግብ</button>`}</td></tr>`).join("")}</table></div>`}
+}
+$("a2").onclick=e=>{let d=e.target.dataset;if(!d.a)return;let l=L().find(x=>x.id==d.id),nt=$("nt"+d.id).value.trim();if(d.a==="rejected"&&!nt)return $("nt"+d.id).placeholder="ውድቅ ለማድረግ ምክንያት ያስፈልጋል";l.status=d.a;l.note=nt;save();arender()};
+$("a3").addEventListener("click",e=>{if(e.target.id!=="sl-s")return;let a=$("sl-t").value.split(/[\s,]+/).filter(Boolean).map(Number);if(a.length!==S.length||a.some(isNaN))return $("sl-m").textContent="23 ቁጥሮች በትክክል ያስገቡ።";M.s=a;ST.set("s2s",a);arender()});
+$("a4").onclick=async e=>{let d=e.target.dataset;if(e.target.id==="of-s"){navigator.geolocation.getCurrentPosition(p=>{OFF={lat:p.coords.latitude,lng:p.coords.longitude,r:150};ST.set("s2o",OFF);save();$("of-m").textContent="የቢሮ GPS ቦታ ተቀምጧል ✓"},()=>{$("of-m").textContent="GPS ፈቃድ አልተሰጠም።"},{enableHighAccuracy:true,timeout:20000,maximumAge:0});return}
+ if(e.target.id==="bk-c"){let data=JSON.stringify({g:G(),l:L(),o:OFF,c:C()});$("bk-t").value=data;$("a4m").textContent="ቅጂው በሳጥኑ ውስጥ ተዘጋጅቷል።";return}
+ if(e.target.id==="bk-r"){try{let x=JSON.parse($("bk-t").value);if(!Array.isArray(x.g)||!Array.isArray(x.l))throw 0;M.g=x.g;M.l=x.l;M.c=x.c||C();OFF=x.o||OFF;save();enList();arender();$("a4m").textContent="ተመልሷል ✓"}catch(_){$("a4m").textContent="ቅጂው ትክክል አይደለም።"}return}
+ if(d["face-rm"]!==undefined){delete C()[d["face-rm"]];saveLocal();arender();return}
+ if(d["face-reg"]!==undefined){try{await openFaceCamera("enroll",+d["face-reg"])}catch(x){$("a4m").textContent="የፊት ምዝገባ አልተሳካም፦ "+(x.message||x)}}
+};
+setInterval(()=>{if(!$("v-admin").classList.contains("hide")&&!$("a-app").classList.contains("hide"))arender()},30000);
+(async()=>{await pullCloud();setInterval(pullCloud,15000)})();
+if(location.hash==="#staff"){document.querySelector('[data-go="admin"]').classList.add("hide");show("staff")}
+</script></body></html>
